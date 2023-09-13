@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=2]
+
+[ext_resource path="res://sprites/zombie.png" type="Texture" id=1]
+[ext_resource path="res://sprites/frog.png" type="Texture" id=2]
+[ext_resource path="res://sprites/player.png" type="Texture" id=3]
+[ext_resource path="res://sprites/lady.png" type="Texture" id=4]
+[ext_resource path="res://sprites/remains.png" type="Texture" id=5]
+
+[resource]
+
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Zombie",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Frog",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "Gallant",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Fair",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "ashes",
+"speed": 5.0
+} ]
+

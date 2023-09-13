@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/Board.gd" type="Script" id=1]
+[ext_resource path="res://objects/Firemaker.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/GUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sounds/levelclear.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/gameover.wav" type="AudioStream" id=5]
+
+[node name="Board" type="Node2D"]
+script = ExtResource( 1 )
+path_tilemap = null
+path_camera = null
+level_id = null
+
+[node name="Firemaker" parent="." instance=ExtResource( 2 )]
+
+[node name="GUI" parent="." instance=ExtResource( 3 )]
+
+[node name="Timer_Win" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Timer_Lose" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Audio_Win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0
+
+[node name="Audio_Lose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -20.0
+
+[connection signal="timeout" from="Timer_Win" to="." method="next_level"]
+[connection signal="timeout" from="Timer_Lose" to="." method="restart"]

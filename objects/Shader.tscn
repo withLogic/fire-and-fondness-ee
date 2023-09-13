@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://shaders/glow_scanlines.tres" type="Material" id=1]
+[ext_resource path="res://sprites/solid.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Overlay.gd" type="Script" id=3]
+[ext_resource path="res://sprites/cursor.png" type="Texture" id=4]
+
+[node name="Overlay" type="Polygon2D" index="0"]
+
+material = ExtResource( 1 )
+z_index = 4096
+z_as_relative = false
+polygon = PoolVector2Array( 0, 0, 1280, 0, 1280, 720, 0, 720 )
+uv = PoolVector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = ExtResource( 2 )
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Mouse", "Rect", "Size Flags", "Visibility", "Z Index" ]
+
+[node name="Cursor" type="Sprite" parent="." index="0"]
+
+show_behind_parent = true
+scale = Vector2( 2, 2 )
+z_index = 4096
+texture = ExtResource( 4 )
+centered = false
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+
